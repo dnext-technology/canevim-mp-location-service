@@ -1,0 +1,19 @@
+
+server:
+  port: 8090
+  servlet:
+    context-path: /api/v1
+
+spring:
+  main:
+    banner-mode: "off"
+
+mp:
+  datasource:
+    location:
+      jdbc-url: jdbc:postgresql://<host>/misafirperver
+      username: mp_location_app
+      password: <Password>
+      driver-class-name: org.postgresql.Driver
+      configuration:
+        maximum-pool-size: 30
