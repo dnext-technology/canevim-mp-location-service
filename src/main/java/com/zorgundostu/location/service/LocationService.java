@@ -1,9 +1,9 @@
-package com.misafirperver.location.service;
+package com.zorgundostu.location.service;
 
 import java.util.List;
 
-import com.misafirperver.location.model.Location;
-import com.misafirperver.location.repository.LocationRepository;
+import com.zorgundostu.location.model.Location;
+import com.zorgundostu.location.repository.LocationRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;

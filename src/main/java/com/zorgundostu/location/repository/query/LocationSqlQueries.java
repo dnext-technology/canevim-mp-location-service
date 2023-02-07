@@ -1,4 +1,4 @@
-package com.misafirperver.location.repository.query;
+package com.zorgundostu.location.repository.query;
 
 public class LocationSqlQueries {
     private LocationSqlQueries(){}

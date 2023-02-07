@@ -1,7 +1,4 @@
-package com.misafirperver.location.constant;
-
-import com.misafirperver.location.controller.LocationController;
-import com.misafirperver.location.model.Location;
+package com.zorgundostu.location.constant;
 
 
 public class LocationConstants {

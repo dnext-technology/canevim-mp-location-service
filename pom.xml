@@ -8,7 +8,7 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.misafirperver.location</groupId>
+	<groupId>com.zorgundostu.location</groupId>
 	<artifactId>mp-location-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mp-location-service</name>

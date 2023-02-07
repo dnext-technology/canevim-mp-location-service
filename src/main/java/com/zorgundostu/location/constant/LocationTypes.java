@@ -1,4 +1,4 @@
-package com.misafirperver.location.constant;
+package com.zorgundostu.location.constant;
 
 public enum LocationTypes {
     CITY("city"),

@@ -1,4 +1,4 @@
-package com.misafirperver.location;
+package com.zorgundostu.location;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

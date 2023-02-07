@@ -1,18 +1,16 @@
-package com.misafirperver.location.repository;
+package com.zorgundostu.location.repository;
 
-import static com.misafirperver.location.constant.LocationConstants.LOCATION_JDBC_TEMPLATE;
-import static com.misafirperver.location.repository.query.LocationSqlQueries.SQL_FETCH_CITIES;
-import static com.misafirperver.location.repository.query.LocationSqlQueries.SQL_FETCH_DISTRICTS;
-import static com.misafirperver.location.repository.query.LocationSqlQueries.SQL_FETCH_NEIGHBORHOODS_WITH_TOWN;
-import static com.misafirperver.location.repository.query.LocationSqlQueries.SQL_FETCH_TOWNS;
+import static com.zorgundostu.location.constant.LocationConstants.LOCATION_JDBC_TEMPLATE;
+import static com.zorgundostu.location.repository.query.LocationSqlQueries.SQL_FETCH_CITIES;
+import static com.zorgundostu.location.repository.query.LocationSqlQueries.SQL_FETCH_DISTRICTS;
+import static com.zorgundostu.location.repository.query.LocationSqlQueries.SQL_FETCH_NEIGHBORHOODS_WITH_TOWN;
+import static com.zorgundostu.location.repository.query.LocationSqlQueries.SQL_FETCH_TOWNS;
 
 import java.util.List;
 
-import com.misafirperver.location.constant.LocationTypes;
-import com.misafirperver.location.model.Location;
+import com.zorgundostu.location.constant.LocationTypes;
+import com.zorgundostu.location.model.Location;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.ObjectUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;

@@ -1,10 +1,10 @@
-package com.misafirperver.location.controller;
+package com.zorgundostu.location.controller;
 
 import java.util.List;
 import java.util.Map;
 
 
-import com.misafirperver.location.model.Location;
+import com.zorgundostu.location.model.Location;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

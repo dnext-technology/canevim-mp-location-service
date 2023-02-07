@@ -1,4 +1,4 @@
-package com.misafirperver.location.model;
+package com.zorgundostu.location.model;
 
 public record Location(
     String type,
