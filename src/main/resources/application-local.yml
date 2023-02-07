@@ -1,6 +1,16 @@
 server:
   port: 8090
 
+spring:
+  main:
+    banner-mode: "off"
+  flyway:
+    baselineOnMigrate: true
+    locations: filesystem:src/main/resources/db.migration
+    user: postgres
+    password: 123123a
+    url: jdbc:postgresql://localhost:5432/zorgundostu
+
 mp:
   datasource:
     location:
