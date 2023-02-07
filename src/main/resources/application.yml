@@ -18,3 +18,13 @@ mp:
       driver-class-name: org.postgresql.Driver
       configuration:
         maximum-pool-size: 30
+
+openapi:
+  app:
+    description: Location service for Zorgundostu project
+    version: 1.0.0
+    title: Zorgundostu API
+    contact: Contact Support
+    email: zorgundostu@gmail.com
+    licence: Signy 1.0
+    url: https://zorgundostu.com/
