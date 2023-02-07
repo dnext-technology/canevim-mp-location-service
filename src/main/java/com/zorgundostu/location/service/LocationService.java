@@ -19,7 +19,7 @@ public class LocationService {
         this.locationRepository = locationRepository;
     }
 
-    public List<Location> getClickableLocations(String city, String district, String town) {
+    public List<Location> getClickableLocations(String city, String district, String town) throws Exception {
         List<Location> locations = null;
         if (ObjectUtils.isEmpty(city) && ObjectUtils.isEmpty(district) && ObjectUtils.isEmpty(town)) {
             locations = getClickableCities();
@@ -39,7 +39,7 @@ public class LocationService {
         return locationRepository.fetchCities();
     }
 
-    private List<Location> getClickableDistricts(String city) {
+    private List<Location> getClickableDistricts(String city) throws Exception {
         return locationRepository.fetchClickableDistricts(city);
     }
 

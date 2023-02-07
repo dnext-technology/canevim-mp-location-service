@@ -36,59 +36,56 @@ public class LocationRepository {
         } catch (Exception exception) {
             log.error("An exception occurred while fetching cities");
         }
-
         //TODO Check list
         return cities;
     }
 
-    public List<Location> fetchClickableDistricts(String city) {
-        List<Location> districts = null;
+    public List<Location> fetchClickableDistricts(String city) throws Exception {
+        List<Location> districts;
         try {
-
             districts = locationJdbcTemplate.query(SQL_FETCH_DISTRICTS, (rs, rowNum) -> new Location(
                     LocationTypes.DISTRICT.label(),
                     rs.getString("district")
 
-            ), new Object[] {city});
+            ), new Object[]{"%" + city.toUpperCase() + "%"});
         } catch (Exception exception) {
             log.error("An exception occurred while fetching districts");
+            throw new RuntimeException("An exception occurred while fetching districts", exception);
         }
-
         //TODO Check list
         return districts;
     }
 
     public List<Location> fetchClickableTowns(String city, String district) {
-        List<Location> towns = null;
+        List<Location> towns;
         try {
             towns = locationJdbcTemplate.query(SQL_FETCH_TOWNS, (rs, rowNum) -> new Location(
                     LocationTypes.TOWN.label(),
                     rs.getString("town")
 
-            ), new Object[] {city, district});
+            ), new Object[]{"%" + city.toUpperCase() + "%", "%" + district.toUpperCase() + "%"});
 
         } catch (Exception exception) {
             log.error("An exception occurred while fetching towns");
+            throw new RuntimeException("An exception occurred while fetching towns", exception);
         }
-
         return towns;
     }
 
-    public List<Location> fetchClickableNeighborhoods( String city, String district, String town) {
-        List<Location> neighborhoods = null;
+    public List<Location> fetchClickableNeighborhoods(String city, String district, String town) {
+        List<Location> neighborhoods;
         try {
             neighborhoods = locationJdbcTemplate.query(SQL_FETCH_NEIGHBORHOODS_WITH_TOWN, (rs, rowNum) -> new Location(
                             LocationTypes.NEIGHBORHOOD.label(),
                             rs.getString("neighborhood")
 
-                    ), new Object[] {city, district, town}
+                    ), new Object[]{"%" + city.toUpperCase() + "%", "%" + district.toUpperCase() + "%", "%" + town.toUpperCase() + "%"}
             );
 
         } catch (Exception exception) {
             log.error("An exception occurred while fetching neighborhoods");
+            throw new RuntimeException("An exception occurred while fetching neighborhoods", exception);
         }
-
-
         return neighborhoods;
     }
 

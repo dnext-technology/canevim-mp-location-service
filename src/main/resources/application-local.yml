@@ -1,12 +1,6 @@
 server:
   port: 8090
 
-spring:
-  main:
-    banner-mode: "off"
-  flyway:
-    baselineOnMigrate: true
-
 mp:
   datasource:
     location:

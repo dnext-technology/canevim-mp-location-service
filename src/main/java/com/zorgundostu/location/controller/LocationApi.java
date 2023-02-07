@@ -38,5 +38,5 @@ public interface LocationApi {
                                                 @RequestParam(required = false) String city,
                                                 @RequestParam(required = false) String district,
                                                 @RequestParam(required = false) String town
-    );
+    ) throws Exception;
 }

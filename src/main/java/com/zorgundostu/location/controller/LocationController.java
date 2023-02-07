@@ -19,7 +19,7 @@ public class LocationController implements LocationApi{
     }
 
     @Override
-    public ResponseEntity<List<Location>> getLocations(Map<String, String> header, String city, String district, String town) {
+    public ResponseEntity<List<Location>> getLocations(Map<String, String> header, String city, String district, String town) throws Exception {
         return ResponseEntity.ok(locationService.getClickableLocations(city,district,town));
     }
 }
