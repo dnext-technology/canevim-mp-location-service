@@ -7,13 +7,15 @@ server:
 spring:
   main:
     banner-mode: "off"
+  flyway:
+    baselineOnMigrate: true
 
 mp:
   datasource:
     location:
-      jdbc-url: jdbc:postgresql://<host>/misafirperver
-      username: mp_location_app
-      password: <Password>
+      jdbc-url: jdbc:postgresql://localhost:5432/zorgundostu
+      username: postgres
+      password: 123123a
       driver-class-name: org.postgresql.Driver
       configuration:
         maximum-pool-size: 30
