@@ -47,7 +47,7 @@ public class LocationRepository {
                     LocationTypes.DISTRICT.label(),
                     rs.getString("district")
 
-            ), new Object[]{"%" + city.toUpperCase() + "%"});
+            ), new Object[]{city.toUpperCase()});
         } catch (Exception exception) {
             log.error("An exception occurred while fetching districts");
             throw new RuntimeException("An exception occurred while fetching districts", exception);
@@ -63,7 +63,7 @@ public class LocationRepository {
                     LocationTypes.TOWN.label(),
                     rs.getString("town")
 
-            ), new Object[]{"%" + city.toUpperCase() + "%", "%" + district.toUpperCase() + "%"});
+            ), new Object[]{city.toUpperCase(), district.toUpperCase()});
 
         } catch (Exception exception) {
             log.error("An exception occurred while fetching towns");
@@ -79,7 +79,7 @@ public class LocationRepository {
                             LocationTypes.NEIGHBORHOOD.label(),
                             rs.getString("neighborhood")
 
-                    ), new Object[]{"%" + city.toUpperCase() + "%", "%" + district.toUpperCase() + "%", "%" + town.toUpperCase() + "%"}
+                    ), new Object[]{city.toUpperCase(), district.toUpperCase(), town.toUpperCase()}
             );
 
         } catch (Exception exception) {
