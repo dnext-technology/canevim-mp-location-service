@@ -6,12 +6,6 @@ server:
 spring:
   main:
     banner-mode: "off"
-  flyway:
-    baselineOnMigrate: true
-    locations: filesystem:src/main/resources/db.migration
-    user: postgres
-    password: postgres
-    url: jdbc:postgresql://zorgundostu-db:5432/zorgundostu
 
 mp:
   datasource:

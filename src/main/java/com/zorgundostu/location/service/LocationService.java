@@ -20,7 +20,7 @@ public class LocationService {
     }
 
     public List<Location> getClickableLocations(String city, String district, String town) throws Exception {
-        List<Location> locations = null;
+        List<Location> locations;
         if (ObjectUtils.isEmpty(city) && ObjectUtils.isEmpty(district) && ObjectUtils.isEmpty(town)) {
             locations = getClickableCities();
         } else if (ObjectUtils.isNotEmpty(city) && ObjectUtils.isEmpty(district)) {
@@ -30,7 +30,8 @@ public class LocationService {
         } else if (ObjectUtils.isNotEmpty(city) && ObjectUtils.isNotEmpty(district)&&ObjectUtils.isNotEmpty(town)) {
             locations = getClickableNeighborhoods(city, district, town);
         } else {
-            log.error("Exception");
+            log.error("An exception occurred while fetching locations, city: {}, district: {}, town: {}", city, district, town);
+            throw new RuntimeException("An exception occurred while fetching locations, city: " + city + ", district: " + district + ", town: " + town);
         }
         return locations;
     }

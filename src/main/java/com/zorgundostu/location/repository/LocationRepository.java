@@ -43,11 +43,12 @@ public class LocationRepository {
     public List<Location> fetchClickableDistricts(String city) throws Exception {
         List<Location> districts;
         try {
+            String cityParameter = "%"+city.toUpperCase()+"%";
             districts = locationJdbcTemplate.query(SQL_FETCH_DISTRICTS, (rs, rowNum) -> new Location(
                     LocationTypes.DISTRICT.label(),
                     rs.getString("district")
 
-            ), new Object[]{"%" + city.toUpperCase() + "%"});
+            ), new Object[]{cityParameter});
         } catch (Exception exception) {
             log.error("An exception occurred while fetching districts");
             throw new RuntimeException("An exception occurred while fetching districts", exception);
@@ -59,11 +60,13 @@ public class LocationRepository {
     public List<Location> fetchClickableTowns(String city, String district) {
         List<Location> towns;
         try {
+            String cityParameter = "%"+city.toUpperCase()+"%";
+            String districtParameter = "%"+district.toUpperCase()+"%";
             towns = locationJdbcTemplate.query(SQL_FETCH_TOWNS, (rs, rowNum) -> new Location(
                     LocationTypes.TOWN.label(),
                     rs.getString("town")
 
-            ), new Object[]{"%" + city.toUpperCase() + "%", "%" + district.toUpperCase() + "%"});
+            ), new Object[]{cityParameter, districtParameter});
 
         } catch (Exception exception) {
             log.error("An exception occurred while fetching towns");
@@ -75,11 +78,14 @@ public class LocationRepository {
     public List<Location> fetchClickableNeighborhoods(String city, String district, String town) {
         List<Location> neighborhoods;
         try {
+            String cityParameter = "%"+city.toUpperCase()+"%";
+            String districtParameter = "%"+district.toUpperCase()+"%";
+            String townParameter = "%"+town.toUpperCase()+"%";
             neighborhoods = locationJdbcTemplate.query(SQL_FETCH_NEIGHBORHOODS_WITH_TOWN, (rs, rowNum) -> new Location(
                             LocationTypes.NEIGHBORHOOD.label(),
                             rs.getString("neighborhood")
 
-                    ), new Object[]{"%" + city.toUpperCase() + "%", "%" + district.toUpperCase() + "%", "%" + town.toUpperCase() + "%"}
+                    ), new Object[]{cityParameter, districtParameter, townParameter}
             );
 
         } catch (Exception exception) {
