@@ -10,7 +10,7 @@ spring:
 mp:
   datasource:
     location:
-      jdbc-url: jdbc:postgresql://zorgundostu-db:5432/zorgundostu
+      jdbc-url: jdbc:postgresql://zgd-db-dev:5432/zgd-dev
       username: postgres
       password: postgres
       driver-class-name: org.postgresql.Driver
